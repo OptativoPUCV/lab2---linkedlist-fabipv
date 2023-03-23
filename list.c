@@ -62,12 +62,19 @@ void * lastList(List * list) {
   {
     return NULL;
   }
+  
   list->current = list->tail;
   return list->current->data;
 }
 
 void * prevList(List * list) {
+  if(list->head == NULL)
+  {
     return NULL;
+  }
+
+  list->current = list->head;
+  return list->current->data;
 }
 
 void pushFront(List * list, void * data) {
